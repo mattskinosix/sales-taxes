@@ -1,7 +1,7 @@
 import sys
 from unittest.case import TestCase
 sys.path.append('src')
-from lib.string_parser import extract_price, extract_number, extract_imported, extract_product_name
+from utils.string_parser import extract_price, extract_number, extract_imported, extract_product_name
 
 
 class TestStringParser(TestCase):
@@ -20,10 +20,10 @@ class TestStringParser(TestCase):
         extracted = extract_imported(string)
         self.assertEqual(extracted, True)
 
-    def test_imported_fail(self):
+    def test_imported_false(self):
         string = "box of chocolates at 10.00"
-        self.assertRaises(IndexError, extract_imported, string)
-
+        extracted = extract_imported(string)
+        self.assertEqual(extracted, False)
 
     def test_price(self):
         string = "1 price box of chocolates at 10.00"
