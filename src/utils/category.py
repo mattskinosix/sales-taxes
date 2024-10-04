@@ -1,5 +1,5 @@
 from typing import List
-from lib.constants import BOOK_KEYWORD, FOOD_KEYWORD, MEDICAL_KEYWORD
+from utils.constants import BOOK_KEYWORD, FOOD_KEYWORD, MEDICAL_KEYWORD
 
 
 def product_name_contains(array: List[str], product_name: str):

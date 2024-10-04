@@ -1,16 +1,30 @@
-
-from typing import List
-from lib.category import get_category_by_name
-from lib.product import Product
-
 import logging
-from lib.string_parser import extract_imported, extract_number, extract_price, extract_product_name
-from lib.utils import round_nearest
+from typing import List
+from utils.category import get_category_by_name
+from utils.product import Product
+from utils.string_parser import extract_imported, \
+    extract_number, \
+    extract_price, \
+    extract_product_name
 
 
-basket1 = ['1 book at 12.49', '1 music CD at 14.99', '1 chocolate bar at 0.85']
-basket2 = ['1 imported box of chocolates at 10.00', '1 imported bottle of perfume at 47.50']
-basket3 = ['1 imported bottle of perfume at 27.99', '1 bottle of perfume at 18.99', '1 packet of headache pills at 9.75', '1 box of imported chocolates at 11.25',]
+basket1 = [
+    '1 book at 12.49',
+    '1 music CD at 14.99',
+    '1 chocolate bar at 0.85'
+]
+
+basket2 = [
+    '1 imported box of chocolates at 10.00',
+    '1 imported bottle of perfume at 47.50'
+]
+
+basket3 = [
+    '1 imported bottle of perfume at 27.99',
+    '1 bottle of perfume at 18.99',
+    '1 packet of headache pills at 9.75',
+    '1 box of imported chocolates at 11.25',
+]
 
 
 def calculate_receipt(basket: List[str]):
