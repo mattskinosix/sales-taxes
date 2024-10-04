@@ -40,5 +40,6 @@ class TestStringParser(TestCase):
         self.assertEqual(extracted, 'box of chocolates')
 
     def test_product_name_fail(self):
-        string = "1 imported box of chocolates at 10.00"
-        self.assertRaises(IndexError, extract_product_name, string)
+        string = " 1    imported box of chocolates ciao at 10.00"
+        extracted = extract_product_name(string)
+        self.assertNotEqual(extracted, 'box of chocolates')

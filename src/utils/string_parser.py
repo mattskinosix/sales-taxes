@@ -15,7 +15,7 @@ def extract_imported(string) -> bool:
 
 
 def extract_product_name(string) -> str:
-    extraced = re.findall(r'(\d+) ((.*)?) (.*?) at', string)[0][2]
+    extraced = re.findall(r'(\d+\s+imported)? (.*?) at', string)[0][1]
     return extraced
 
 
