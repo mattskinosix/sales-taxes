@@ -1,6 +1,5 @@
 import sys
 from unittest import TestCase
-import unittest
 sys.path.append('src')
 from utils.product import Product
 
@@ -33,6 +32,11 @@ class VatTest(TestCase):
         self.assertTrue(vat.iva != 0)
 
     def test_product_str(self):
+        vat = Product(category='book', is_imported=False, price=5,
+                      product_name='harry potter', quantity=1)
+        self.assertTrue(vat.__str__() == '1 harry potter at 5.0')
+
+    def test_product_imported_str(self):
         vat = Product(category='book', is_imported=True, price=5,
                       product_name='harry potter', quantity=1)
-        self.assertTrue(vat.__str__() == '1 harry potter at 5.25')
+        self.assertTrue(vat.__str__() == '1 imported harry potter at 5.25')

@@ -41,4 +41,4 @@ class Product:
         return price
 
     def __str__(self) -> str:
-        return f"{self.quantity} {self.product_name} at {self.get_price_tot()}"
+        return f"""{self.quantity}{' imported' if self.is_imported else ''} {self.product_name} at {self.get_price_tot()}"""
